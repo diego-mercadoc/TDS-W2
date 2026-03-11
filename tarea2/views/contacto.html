@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Diego Mercado</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="container page-center">
+      <section class="card form-card">
+        <nav class="nav nav-inline">
+          <a href="/">Inicio</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+
+        <div id="success-box" class="success-banner hidden">
+          Tu mensaje se envio con exito.
+        </div>
+
+        <h1>Formulario de contacto</h1>
+        <p class="muted">
+          Llena los campos y el server los procesara antes de mandarlos a
+          FormSubmit.
+        </p>
+
+        <form action="/contacto" method="POST" class="form">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required />
+
+          <label for="correo">Correo electronico</label>
+          <input id="correo" name="correo" type="email" required />
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+
+          <button type="submit" class="button">Enviar mensaje</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const successBox = document.getElementById("success-box");
+
+      if (params.get("enviado") === "1") {
+        successBox.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>

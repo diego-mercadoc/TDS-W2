@@ -1,0 +1,19 @@
+{
+  "name": "tarea2-web-app-presentacion",
+  "version": "1.0.0",
+  "description": "Web app de presentacion con Express para la Tarea 2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "cv"
+  ],
+  "author": "Diego",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
