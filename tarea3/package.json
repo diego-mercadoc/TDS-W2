@@ -1,0 +1,20 @@
+{
+  "name": "ejercicio-clase-2026-03-24",
+  "version": "1.0.0",
+  "description": "CRUD de alumnos con Node, Express, MongoDB y Express Handlebars",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "keywords": ["express", "mongodb", "handlebars", "crud"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.7.0"
+  }
+}

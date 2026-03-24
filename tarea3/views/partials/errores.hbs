@@ -1,0 +1,10 @@
+{{#if errors}}
+<div class="alert alert-danger">
+  <p class="fw-semibold mb-1">Revisa los siguientes puntos:</p>
+  <ul class="mb-0">
+    {{#each errors}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}

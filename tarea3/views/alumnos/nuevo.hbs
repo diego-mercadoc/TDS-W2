@@ -1,0 +1,33 @@
+<h1 class="h3 mb-3">Registrar alumno</h1>
+
+{{> errores}}
+
+<form action="/alumnos" method="post" novalidate>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" value="{{alumno.nombre}}" required>
+    </div>
+    <div class="col-md-6">
+      <label for="correo" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" name="correo" value="{{alumno.correo}}" required>
+    </div>
+    <div class="col-md-6">
+      <label for="expediente" class="form-label">Número de expediente</label>
+      <input type="text" class="form-control" id="expediente" name="expediente" value="{{alumno.expediente}}" required>
+    </div>
+    <div class="col-md-6">
+      <label for="semestre" class="form-label">Semestre</label>
+      <select class="form-select" id="semestre" name="semestre" required>
+        <option value="" disabled {{#unless alumno.semestre}}selected{{/unless}}>Selecciona…</option>
+        {{#each (range 1 10)}}
+        <option value="{{this}}" {{#if (eq ../alumno.semestre this)}}selected{{/if}}>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="mt-4">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="/alumnos" class="btn btn-link">Cancelar</a>
+  </div>
+</form>
